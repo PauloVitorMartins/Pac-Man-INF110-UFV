@@ -3,8 +3,8 @@
 #include <cstring>
 #include <cstdlib>
 #include <ctime>
-#include <fstream> //usada para ler arquivos
-#include <ostream> //usada para escrever arquivos
+#include <fstream>
+#include <ostream>
 #include <iostream>
 #include <SFML/Audio.hpp>
 #include <string>
@@ -188,32 +188,32 @@ bool closeyavast=false,closeybaidu=false, closeywin=false, closeymc=false;
 int gamestatus=0;
 int main() {
 
-    sf::SoundBuffer somComendo = retornaSom("./sounds/pacman_chomp.wav");
+    sf::SoundBuffer somComendo = retornaSom("./assets/sounds/pacman_chomp.wav");
     sf::Sound soundComendo(somComendo);
     soundComendo.setVolume(15.0f);
 
-    sf::SoundBuffer songComendoFantasma = retornaSom("./sounds/comendoFantasma.wav");
+    sf::SoundBuffer songComendoFantasma = retornaSom("./assets/sounds/comendoFantasma.wav");
     sf::Sound comeF(songComendoFantasma);
     soundComendo.setVolume(40.0f);
 
-    sf::SoundBuffer songComendoFruta = retornaSom("./sounds/comendoFruta.wav");
+    sf::SoundBuffer songComendoFruta = retornaSom("./assets/sounds/comendoFruta.wav");
     sf::Sound comeFruta(songComendoFruta);
     soundComendo.setVolume(40.0f);
 
-    sf::SoundBuffer songStart = retornaSom("./sounds/start.wav");
+    sf::SoundBuffer songStart = retornaSom("./assets/sounds/start.wav");
     sf::Sound somStart(songStart);
 
-    sf::SoundBuffer songPersegue = retornaSom("./sounds/somPersegue.wav");
+    sf::SoundBuffer songPersegue = retornaSom("./assets/sounds/somPersegue.wav");
     sf::Sound somPersegue(songPersegue);
 
-    sf::SoundBuffer songPress = retornaSom("./sounds/press.wav");
+    sf::SoundBuffer songPress = retornaSom("./assets/sounds/press.wav");
     sf::Sound somPress(songPress);
 
-    sf::SoundBuffer songMorrendo = retornaSom("./sounds/morrendo.wav");
+    sf::SoundBuffer songMorrendo = retornaSom("./assets/sounds/morrendo.wav");
     sf::Sound somMorrendo(songMorrendo);
 
 
-    sf::SoundBuffer songSirene = retornaSom("./sounds/somSirene.wav");
+    sf::SoundBuffer songSirene = retornaSom("./assets/sounds/somSirene.wav");
     sf::Sound somSirene(songSirene);
 
     arquivo >> maxScore;
@@ -240,12 +240,12 @@ int main() {
     BOLA.setFillColor({255, 255, 255});
 
     // sprites do PacMan
-    sf::Texture texture = retornaTextura("./sprites/virusdireita.png");
-    sf::Texture texture1 = retornaTextura("./sprites/virusdireitagiro.png");
-    sf::Texture texture2 = retornaTextura("./sprites/virusdireitaapagado.png");
-    sf::Texture texturaPacPower = retornaTextura("./sprites/fantasmaPowered.png"); 
-    sf::Texture texturaPacPower2 = retornaTextura("./sprites/fantasmaPowered2.png");
-    sf::Texture texturaFantasmaAssustado = retornaTextura("./sprites/scared.png");
+    sf::Texture texture = retornaTextura("./assets/sprites/virusdireita.png");
+    sf::Texture texture1 = retornaTextura("./assets/sprites/virusdireitagiro.png");
+    sf::Texture texture2 = retornaTextura("./assets/sprites/virusdireitaapagado.png");
+    sf::Texture texturaPacPower = retornaTextura("./assets/sprites/fantasmaPowered.png"); 
+    sf::Texture texturaPacPower2 = retornaTextura("./assets/sprites/fantasmaPowered2.png");
+    sf::Texture texturaFantasmaAssustado = retornaTextura("./assets/sprites/scared.png");
     sf::Sprite sprite(texture);
 
     float escalaPacman = tamanhoPac / texture.getSize().x;
@@ -254,31 +254,31 @@ int main() {
 
      //FANTASMAS SPRITE
 
-    sf::Texture baidutextura = retornaTextura("./sprites/baidu.png");
-    sf::Texture baidutextura1 = retornaTextura("./sprites/baidu1.png");
-    sf::Texture baidutextura2 = retornaTextura("./sprites/baidu2.png");
+    sf::Texture baidutextura = retornaTextura("./assets/sprites/baidu.png");
+    sf::Texture baidutextura1 = retornaTextura("./assets/sprites/baidu1.png");
+    sf::Texture baidutextura2 = retornaTextura("./assets/sprites/baidu2.png");
     sf::Sprite fantasmabaidu{baidutextura};
 
-    sf::Texture avasttextura = retornaTextura("./sprites/avast.png");
-    sf::Texture avasttextura1 = retornaTextura("./sprites/avast1.png");
-    sf::Texture avasttextura2 = retornaTextura("./sprites/avast2.png");
+    sf::Texture avasttextura = retornaTextura("./assets/sprites/avast.png");
+    sf::Texture avasttextura1 = retornaTextura("./assets/sprites/avast1.png");
+    sf::Texture avasttextura2 = retornaTextura("./assets/sprites/avast2.png");
     sf::Sprite fantasmaavast{avasttextura};
 
-    sf::Texture wintextura = retornaTextura("./sprites/win.png");
-    sf::Texture wintextura1 = retornaTextura("./sprites/win1.png");
-    sf::Texture wintextura2 = retornaTextura("./sprites/win2.png");
+    sf::Texture wintextura = retornaTextura("./assets/sprites/win.png");
+    sf::Texture wintextura1 = retornaTextura("./assets/sprites/win1.png");
+    sf::Texture wintextura2 = retornaTextura("./assets/sprites/win2.png");
     sf::Sprite fantasmawin{wintextura};
 
-    sf::Texture mctextura = retornaTextura("./sprites/mc.png");
-    sf::Texture mctextura1 = retornaTextura("./sprites/mc1.png");
-    sf::Texture mctextura2 = retornaTextura("./sprites/mc2.png");
+    sf::Texture mctextura = retornaTextura("./assets/sprites/mc.png");
+    sf::Texture mctextura1 = retornaTextura("./assets/sprites/mc1.png");
+    sf::Texture mctextura2 = retornaTextura("./assets/sprites/mc2.png");
     sf::Sprite fantasmamc{mctextura};
 
     //FRUTAS SPRITE
 
-    sf::Texture berrytextura = retornaTextura("./sprites/frutaberry.png");
-    sf::Texture orangetextura = retornaTextura("./sprites/frutaorange.png");
-    sf::Texture melontextura = retornaTextura("./sprites/frutamelon.png");
+    sf::Texture berrytextura = retornaTextura("./assets/sprites/frutaberry.png");
+    sf::Texture orangetextura = retornaTextura("./assets/sprites/frutaorange.png");
+    sf::Texture melontextura = retornaTextura("./assets/sprites/frutamelon.png");
     sf::Sprite melon{melontextura};
     sf::Sprite orange{orangetextura};
     sf::Sprite berry{berrytextura};
@@ -319,7 +319,7 @@ int main() {
 
 
     sf::Font font; //fonte
-    if(!font.openFromFile("emulogic.ttf")){
+    if(!font.openFromFile("./assets/emulogic.ttf")){
         std::cout << "Erro lendo fonte emulogic\n";
         return 0;
     }
