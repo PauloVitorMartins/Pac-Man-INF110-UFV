@@ -19,5 +19,5 @@ Projeto desenvolvido em colaboração por:
 * **Biblioteca Gráfica:** SFML (Simple and Fast Multimedia Library)
 * **Conceitos Aplicados:** Game Loop, renderização baseada em matrizes (Tilemap), colisão lógica por grid, interpolação de movimento suave e animação de sprites orientada a tempo (`sf::Clock`).
 
-´´´
+´´´bash
 ./jogar.sh
